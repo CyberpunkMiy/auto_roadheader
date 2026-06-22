@@ -1,0 +1,46 @@
+﻿# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Local environments and editor files
+.venv/
+venv/
+.env
+.vscode/
+.idea/
+
+# MuJoCo/runtime logs
+MUJOCO_LOG.TXT
+src/control/MUJOCO_LOG.TXT
+
+# Obsolete local experiments
+作废/
+
+# Training logs and TensorBoard events
+src/rl_train/logs/*.log
+src/rl_train/logs/*.err.log
+src/rl_train/logs/*.out.log
+src/rl_train/logs/*.monitor.csv
+src/rl_train/logs/events.out.tfevents*
+src/rl_train/logs/PPO_*/
+src/rl_train/logs/evaluations.npz
+
+# Keep the final demo recording
+!src/rl_train/logs/best_selected_visual_eval_half_speed.mp4
+
+# Intermediate RL checkpoints
+src/rl_train/models/roadheader_ppo_*_steps.zip
+src/rl_train/models/roadheader_ppo_vecnormalize_*_steps.pkl
+src/rl_train/models/best_model.zip
+src/rl_train/models/roadheader_final.zip
+src/rl_train/models/vecnormalize.pkl
+
+# Keep selected final model artifacts
+!src/rl_train/models/roadheader_best_selected.zip
+!src/rl_train/models/vecnormalize_best_selected.pkl
+!src/rl_train/models/BEST_SELECTED_RESULT.txt
+
+# Temporary backups from experiments
+src/output/merged_result_before_reachable_shift.xml
+src/rl_train/train_before_excavation_metric_fix.py

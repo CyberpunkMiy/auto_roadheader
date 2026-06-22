@@ -1,0 +1,24 @@
+﻿Selected best deterministic policy after formal training
+=======================================================
+
+Selection date: 2026-06-22
+Selected checkpoint: roadheader_ppo_2400000_steps.zip
+Selected VecNormalize: roadheader_ppo_vecnormalize_2400000_steps.pkl
+Copied final selected model: roadheader_best_selected.zip
+Copied final selected normalization: vecnormalize_best_selected.pkl
+
+Evaluation command:
+conda run -n urdf2mjcf_env python work/compare_candidate_policies.py --episodes 3 --max-steps 2000
+
+Best deterministic result among evaluated candidates:
+- Candidate: 2400k
+- Episodes: 3
+- Successes: 0/3
+- Remaining voxels: 149 / 5313
+- Removed fraction: 0.9719555806512328
+- Episode steps: 2000
+
+Notes:
+- The 3M final checkpoint was evaluated but was slightly worse in deterministic execution: remaining 170.
+- Training monitor observed a best stochastic training episode with remaining 132, but the best reproducible deterministic checkpoint evaluation is 2400k with remaining 149.
+- No further training is running after selection.
